@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block title %} User Profile {% endblock %} {% block
+content %}
+<section class="editor-section">
+  <img src="{{user.image_url}}" />
+  <div>
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <div>
+      <form action="/users/{{user.id}}/edit">
+        <button class="edit">Edit</button>
+      </form>
+    </div>
+    <div>
+      <form method="post" action="/users/{{user.id}}/delete">
+        <button class="delete" type="submit">Delete</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

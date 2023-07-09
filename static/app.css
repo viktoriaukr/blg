@@ -1,0 +1,83 @@
+a,
+a:visited {
+  text-decoration: none;
+}
+
+.flashes .error {
+  background-color: rgba(255, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  width: 45vh;
+}
+
+.flashes .success {
+  background-color: rgba(0, 255, 0, 0.3);
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  width: 45vh;
+}
+input {
+  width: 30vh;
+  height: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+.editor-section {
+  display: flex;
+  margin-top: 5vh;
+}
+img {
+  width: 15vh;
+  height: 15vh;
+  margin-right: 1rem;
+}
+
+label {
+  font-size: larger;
+  display: flex;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button {
+  font-size: 17px;
+  border-radius: 5px;
+  width: 10vh;
+}
+
+.edit,
+.add-user {
+  background-color: rgb(32, 32, 159);
+  color: aliceblue;
+}
+
+.add {
+  margin-top: 1rem;
+  background-color: green;
+  border: 1px solid green;
+  color: aliceblue;
+}
+
+.delete {
+  background-color: red;
+  border: 1px solid red;
+  color: white;
+  margin-top: 0.1rem;
+}
+
+.save {
+  margin-top: 1rem;
+  background-color: green;
+  border: 1px solid green;
+  color: aliceblue;
+}
+.cancel {
+  border: 1px solid green;
+  background-color: white;
+}
+
+.link {
+  color: green;
+}
