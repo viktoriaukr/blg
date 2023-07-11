@@ -16,5 +16,18 @@ content %}
     </div>
   </div>
 </section>
+<div>
+  <h2>Posts</h2>
+  <ul>
+    {% for post in user.post %}
+    <li>
+      <a href="/posts/{{post.id}}">{{post.title}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  <button>
+    <a href="/users/{{user.id}}/posts/new">Add</a>
+  </button>
+</div>
 
 {% endblock %}

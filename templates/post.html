@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %} Post details {% endblock %} {% block
+content %}
+<section class="post-section">
+  <h1>{{post.title}}</h1>
+  <p>{{post.content}}</p>
+  <small>{{post.created_at}}</small>
+  <button class="cancel">
+    <a class="link" href="/users/{{user.id}}">Cancel</a>
+  </button>
+  <form action="/posts/{{post.id}}/edit">
+    <button class="edit">Edit</button>
+  </form>
+  <form method="post" action="/posts/{{post.id}}/delete">
+    <button class="delete" type="submit">Delete</button>
+  </form>
+</section>
+" {% endblock %}
