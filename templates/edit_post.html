@@ -8,7 +8,7 @@
     <textarea name="content"></textarea>
     </p>
     </br>
-    <button class="cancel"><a class="link" href="/users/{{user.id}}">Cancel</a></button>
+    <button class="cancel"><a class="link" href="/users/{{post.user.id}}">Cancel</a></button>
     <form method="post" action="/posts/{{post.id}}"><button class="save">Edit</button></form>
   </for>
   {% endblock %}

@@ -3,9 +3,9 @@ content %}
 <section class="post-section">
   <h1>{{post.title}}</h1>
   <p>{{post.content}}</p>
-  <small>{{post.created_at}}</small>
+  <small>{{post.created_at}}</small></br>
   <button class="cancel">
-    <a class="link" href="/users/{{user.id}}">Cancel</a>
+    <a class="link" href="/users/{{post.user.id}}">Cancel</a>
   </button>
   <form action="/posts/{{post.id}}/edit">
     <button class="edit">Edit</button>
@@ -14,4 +14,4 @@ content %}
     <button class="delete" type="submit">Delete</button>
   </form>
 </section>
-" {% endblock %}
+{% endblock %}
