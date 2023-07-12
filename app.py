@@ -2,7 +2,7 @@
 
 from flask import Flask, request, render_template, redirect, flash
 from flask_debugtoolbar import DebugToolbarExtension
-from models import db, connect_db, Users, Post
+from models import db, connect_db, Users, Post, Tag, PostTag
 
 app = Flask(__name__)
 
@@ -161,3 +161,64 @@ def delete_post(post_id):
     db.session.commit()
 
     return redirect(f"/users/{post.user_id}")
+
+
+#######################################################################
+
+@app.route('/tags')
+def get_tags():
+    """Returns a list of tags."""
+
+    tags = Tag.query.all()
+    return render_template("tags.html", tags=tags)
+
+
+@app.route('/tags/new')
+def new_tags():
+    tag = Tag.query.all()
+    return render_template("new_tag.html", tag=tag)
+
+@app.route('/tags/new' , methods=['POST'])
+def create_tags():
+    name = request.form['tag']
+
+    new_tag = Tag(name = name)
+    db.session.add(new_tag)
+    db.session.commit()
+    flash("Successfully created tag", "success")
+    return redirect("/tags")
+
+
+
+@app.route("/tags/<int:tag_id>")
+def show_tag(tag_id):
+    tag = Tag.query.get_or_404(tag_id)
+    return render_template("show_tag.html", tag=tag)
+
+
+@app.route("/tags/<int:tag_it>/edit")
+def get_edit_page(tag_id):
+    tag = Tag.query.get_or_404(tag_id)
+    return render_template("edit_tag.html", tag=tag)
+
+
+
+@app.route("/tags/<int:tag_id>/edit", method=['POST'])
+def edit_tag(tag_id):
+    tag = Tag.query.get_or_404(tag_id)
+
+    tag.name = request.form['tag']
+
+    db.session.commit()
+    flash("Tag updated successfully", "success")
+
+    return redirect("/tags")
+
+
+@app.route("/tags/<int:tag_id>/delete", method=['POST'])
+def delete_tag(tag_id):
+    tag = Tag.query.get_or_404(tag_id)
+    db.session.delete(tag)
+    db.session.commit()
+
+    return redirect('/tags')
