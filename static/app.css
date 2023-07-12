@@ -25,6 +25,10 @@ input {
   border: 1px solid black;
   padding-left: 5px;
 }
+textarea {
+  width: 30vh;
+  height: 5rem;
+}
 .editor-section {
   display: flex;
   margin-top: 5vh;
@@ -51,6 +55,7 @@ button {
 .add-user {
   background-color: rgb(32, 32, 159);
   color: aliceblue;
+  margin-bottom: 0.5rem;
 }
 
 .add {
@@ -76,8 +81,20 @@ button {
 .cancel {
   border: 1px solid green;
   background-color: white;
+  margin-bottom: 0.5rem;
 }
 
 .link {
   color: green;
+}
+
+.btn-post {
+  margin-top: 2rem;
+}
+
+.add-post,
+.link-add {
+  background-color: rgb(32, 32, 159);
+  color: aliceblue;
+  border: 1px solid rgb(32, 32, 159);
 }

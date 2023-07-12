@@ -4,6 +4,7 @@ content %}
   <h1>{{post.title}}</h1>
   <p>{{post.content}}</p>
   <small>{{post.created_at}}</small></br>
+  <div class="btn-post">
   <button class="cancel">
     <a class="link" href="/users/{{post.user.id}}">Cancel</a>
   </button>
@@ -13,5 +14,6 @@ content %}
   <form method="post" action="/posts/{{post.id}}/delete">
     <button class="delete" type="submit">Delete</button>
   </form>
+  </div>
 </section>
 {% endblock %}
