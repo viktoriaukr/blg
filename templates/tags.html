@@ -5,10 +5,10 @@ content %}
   <ul>
     {% for tag in tags %}
     <li>
-      <a href="">{{tag.name}}</a>
+      <a href="/tags/{{tag.id}}">{{tag.name}}</a>
     </li>
     {% endfor %}
   </ul>
-  <form action=""><button class="">Add Tag</button></form>
+  <form action="/tags/new"><button class="new-tag">Add Tag</button></form>
 </div>
 {% endblock %}

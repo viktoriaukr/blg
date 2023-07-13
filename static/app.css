@@ -98,3 +98,13 @@ button {
   color: aliceblue;
   border: 1px solid rgb(32, 32, 159);
 }
+
+.checkbox-container {
+  display: flex; /* Display children in a row */
+  align-items: center; /* Vertically align children */
+}
+
+.checkbox-container input[type="checkbox"] {
+  margin-right: -11rem;
+  margin-left: -11rem; /* Add some spacing between the checkbox and label */
+}
