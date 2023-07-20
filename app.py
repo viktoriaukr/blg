@@ -154,8 +154,8 @@ def edit_post(post_id):
     post.title = request.form["title"]
     post.content = request.form["content"]
 
-    tag_ids = [int(num) for num in request.form.getlist("tag")]
-    post.tag = Tag.query.filter(Tag.id.in_(tag_ids)).all() 
+    tag_ids = [int(num) for num in request.form.getlist("tags")]
+    post.tags = Tag.query.filter(Tag.id.in_(tag_ids)).all() 
     
     db.session.add(post)
     db.session.commit()
